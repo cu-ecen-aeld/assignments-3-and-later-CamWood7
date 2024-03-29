@@ -1,0 +1,236 @@
+Running test with user cameron
+-- Generating ;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_hello_Runner.c;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_assignment_validate_Runner.c;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/../student-test/assignment1/Test_validate_username_Runner.c from test/assignment1/Test_hello.c;test/assignment1/Test_assignment_validate.c;../student-test/assignment1/Test_validate_username.c
+-- Building executable including ;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_hello_Runner.c;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_assignment_validate_Runner.c;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/../student-test/assignment1/Test_validate_username_Runner.c test/assignment1/Test_hello.c;test/assignment1/Test_assignment_validate.c;../student-test/assignment1/Test_validate_username.c and ../examples/autotest-validate/autotest-validate.c
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/cameron/Desktop/assignment-1-CamWood7/build
+[  8%] Building C object assignment-autotest/Unity/src/CMakeFiles/unity.dir/unity.c.o
+[ 16%] Linking C static library libunity.a
+[ 16%] Built target unity
+[ 25%] Generating ../../assignment-autotest/test/assignment1/Test_hello_Runner.c, ../../assignment-autotest/test/assignment1/Test_assignment_validate_Runner.c, ../../student-test/assignment1/Test_validate_username_Runner.c, ../../assignment-autotest/test/unity_runner.c
+Test files for auto dependency generation test/assignment1/Test_hello.c test/assignment1/Test_assignment_validate.c ../student-test/assignment1/Test_validate_username.c
+Autogenerating runner for test/assignment1/Test_hello.c
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing safe_level with the 2nd argument of ERB.new is deprecated. Do not use it, and specify other arguments as keyword arguments.
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing trim_mode with the 3rd argument of ERB.new is deprecated. Use keyword argument like ERB.new(str, trim_mode: ...) instead.
+Autogenerating runner for test/assignment1/Test_assignment_validate.c
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing safe_level with the 2nd argument of ERB.new is deprecated. Do not use it, and specify other arguments as keyword arguments.
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing trim_mode with the 3rd argument of ERB.new is deprecated. Use keyword argument like ERB.new(str, trim_mode: ...) instead.
+Autogenerating runner for ../student-test/assignment1/Test_validate_username.c
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing safe_level with the 2nd argument of ERB.new is deprecated. Do not use it, and specify other arguments as keyword arguments.
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing trim_mode with the 3rd argument of ERB.new is deprecated. Use keyword argument like ERB.new(str, trim_mode: ...) instead.
+Autogenerating test/unity_runner.c
+Scanning dependencies of target assignment-autotest
+[ 33%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello.c.o
+[ 41%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate.c.o
+[ 50%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username.c.o
+[ 58%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello_Runner.c.o
+[ 66%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate_Runner.c.o
+[ 75%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username_Runner.c.o
+[ 83%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/__/examples/autotest-validate/autotest-validate.c.o
+[ 91%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/unity_runner.c.o
+[100%] Linking C executable assignment-autotest
+[100%] Built target assignment-autotest
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_hello.c:6:test_hello:INFO: Hello!  Your unity setup is working!
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_hello.c:4:test_hello:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_assignment_validate.c:9:test_assignment_validate:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+Read camwood7 from conf/username.txt
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/../student-test/assignment1/Test_validate_username.c:15:test_validate_my_username:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+Executing assignment test script
+~/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1 ~/Desktop/assignment-1-CamWood7
+~/Desktop/assignment-1-CamWood7/finder-app ~/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1 ~/Desktop/assignment-1-CamWood7
+Error: Invalid number of arguments
+Error: Invalid number of arguments
+Using default value AELD_IS_FUN for string to write
+Using default value 10 for number of files to write
+Writing 10 files containing string AELD_IS_FUN to /tmp/aeld-data
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+failed: expected  The number of files are 10 and the number of matching lines are 10 in Number of files: 10 Number of Lines: 10 but instead found
+[0;31mValidation Error:finder-test.sh execution for default directory failed with return code 1[0m
+Writing 10 files containing string AELD_IS_FUN to /tmp/aeld-data/pokThpsP6huhUETUMVQj93PaBjMmPtP3
+mkdir: cannot create directory ‘=’: File exists
+mkdir: cannot create directory ‘p’: File exists
+mkdir: cannot create directory ‘/tmp/aeld-data/pokThpsP6huhUETUMVQj93PaBjMmPtP3’: No such file or directory
+Error: Failed to make directory
+[0;31mValidation Error:finder-test.sh execution for random directory failed with return code 1[0m
+Validation failed with error list :finder-test.sh execution for default directory failed with return code 1:finder-test.sh execution for random directory failed with return code 1
+Test of assignment assignment1 failed with rc=1
+Running test with user cameron
+-- Generating ;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_hello_Runner.c;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_assignment_validate_Runner.c;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/../student-test/assignment1/Test_validate_username_Runner.c from test/assignment1/Test_hello.c;test/assignment1/Test_assignment_validate.c;../student-test/assignment1/Test_validate_username.c
+-- Building executable including ;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_hello_Runner.c;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_assignment_validate_Runner.c;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/../student-test/assignment1/Test_validate_username_Runner.c test/assignment1/Test_hello.c;test/assignment1/Test_assignment_validate.c;../student-test/assignment1/Test_validate_username.c and ../examples/autotest-validate/autotest-validate.c
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/cameron/Desktop/assignment-1-CamWood7/build
+[  8%] Building C object assignment-autotest/Unity/src/CMakeFiles/unity.dir/unity.c.o
+[ 16%] Linking C static library libunity.a
+[ 16%] Built target unity
+[ 25%] Generating ../../assignment-autotest/test/assignment1/Test_hello_Runner.c, ../../assignment-autotest/test/assignment1/Test_assignment_validate_Runner.c, ../../student-test/assignment1/Test_validate_username_Runner.c, ../../assignment-autotest/test/unity_runner.c
+Test files for auto dependency generation test/assignment1/Test_hello.c test/assignment1/Test_assignment_validate.c ../student-test/assignment1/Test_validate_username.c
+Autogenerating runner for test/assignment1/Test_hello.c
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing safe_level with the 2nd argument of ERB.new is deprecated. Do not use it, and specify other arguments as keyword arguments.
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing trim_mode with the 3rd argument of ERB.new is deprecated. Use keyword argument like ERB.new(str, trim_mode: ...) instead.
+Autogenerating runner for test/assignment1/Test_assignment_validate.c
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing safe_level with the 2nd argument of ERB.new is deprecated. Do not use it, and specify other arguments as keyword arguments.
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing trim_mode with the 3rd argument of ERB.new is deprecated. Use keyword argument like ERB.new(str, trim_mode: ...) instead.
+Autogenerating runner for ../student-test/assignment1/Test_validate_username.c
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing safe_level with the 2nd argument of ERB.new is deprecated. Do not use it, and specify other arguments as keyword arguments.
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing trim_mode with the 3rd argument of ERB.new is deprecated. Use keyword argument like ERB.new(str, trim_mode: ...) instead.
+Autogenerating test/unity_runner.c
+Scanning dependencies of target assignment-autotest
+[ 33%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello.c.o
+[ 41%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate.c.o
+[ 50%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username.c.o
+[ 58%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello_Runner.c.o
+[ 66%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate_Runner.c.o
+[ 75%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username_Runner.c.o
+[ 83%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/__/examples/autotest-validate/autotest-validate.c.o
+[ 91%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/unity_runner.c.o
+[100%] Linking C executable assignment-autotest
+[100%] Built target assignment-autotest
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_hello.c:6:test_hello:INFO: Hello!  Your unity setup is working!
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_hello.c:4:test_hello:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_assignment_validate.c:9:test_assignment_validate:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+Read camwood7 from conf/username.txt
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/../student-test/assignment1/Test_validate_username.c:15:test_validate_my_username:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+Executing assignment test script
+~/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1 ~/Desktop/assignment-1-CamWood7
+~/Desktop/assignment-1-CamWood7/finder-app ~/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1 ~/Desktop/assignment-1-CamWood7
+Error: Invalid number of arguments
+Error: Invalid number of arguments
+Using default value AELD_IS_FUN for string to write
+Using default value 10 for number of files to write
+Writing 10 files containing string AELD_IS_FUN to /tmp/aeld-data
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+The number of files are 10 and the number of matching lines are 10
+success
+Writing 10 files containing string AELD_IS_FUN to /tmp/aeld-data/Lq5B6Ws6RpIIcmftMMee25Bne7D4cHJc
+mkdir: cannot create directory ‘=’: File exists
+mkdir: cannot create directory ‘p’: File exists
+Error: Failed to make directory
+[0;31mValidation Error:finder-test.sh execution for random directory failed with return code 1[0m
+Validation failed with error list :finder-test.sh execution for random directory failed with return code 1
+Test of assignment assignment1 failed with rc=1
+Running test with user cameron
+-- Generating ;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_hello_Runner.c;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_assignment_validate_Runner.c;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/../student-test/assignment1/Test_validate_username_Runner.c from test/assignment1/Test_hello.c;test/assignment1/Test_assignment_validate.c;../student-test/assignment1/Test_validate_username.c
+-- Building executable including ;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_hello_Runner.c;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_assignment_validate_Runner.c;/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/../student-test/assignment1/Test_validate_username_Runner.c test/assignment1/Test_hello.c;test/assignment1/Test_assignment_validate.c;../student-test/assignment1/Test_validate_username.c and ../examples/autotest-validate/autotest-validate.c
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/cameron/Desktop/assignment-1-CamWood7/build
+[  8%] Building C object assignment-autotest/Unity/src/CMakeFiles/unity.dir/unity.c.o
+[ 16%] Linking C static library libunity.a
+[ 16%] Built target unity
+[ 25%] Generating ../../assignment-autotest/test/assignment1/Test_hello_Runner.c, ../../assignment-autotest/test/assignment1/Test_assignment_validate_Runner.c, ../../student-test/assignment1/Test_validate_username_Runner.c, ../../assignment-autotest/test/unity_runner.c
+Test files for auto dependency generation test/assignment1/Test_hello.c test/assignment1/Test_assignment_validate.c ../student-test/assignment1/Test_validate_username.c
+Autogenerating runner for test/assignment1/Test_hello.c
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing safe_level with the 2nd argument of ERB.new is deprecated. Do not use it, and specify other arguments as keyword arguments.
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing trim_mode with the 3rd argument of ERB.new is deprecated. Use keyword argument like ERB.new(str, trim_mode: ...) instead.
+Autogenerating runner for test/assignment1/Test_assignment_validate.c
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing safe_level with the 2nd argument of ERB.new is deprecated. Do not use it, and specify other arguments as keyword arguments.
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing trim_mode with the 3rd argument of ERB.new is deprecated. Use keyword argument like ERB.new(str, trim_mode: ...) instead.
+Autogenerating runner for ../student-test/assignment1/Test_validate_username.c
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing safe_level with the 2nd argument of ERB.new is deprecated. Do not use it, and specify other arguments as keyword arguments.
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/auto/generate_test_runner.rb:344: warning: Passing trim_mode with the 3rd argument of ERB.new is deprecated. Use keyword argument like ERB.new(str, trim_mode: ...) instead.
+Autogenerating test/unity_runner.c
+Scanning dependencies of target assignment-autotest
+[ 33%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello.c.o
+[ 41%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate.c.o
+[ 50%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username.c.o
+[ 58%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello_Runner.c.o
+[ 66%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate_Runner.c.o
+[ 75%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username_Runner.c.o
+[ 83%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/__/examples/autotest-validate/autotest-validate.c.o
+[ 91%] Building C object assignment-autotest/CMakeFiles/assignment-autotest.dir/test/unity_runner.c.o
+[100%] Linking C executable assignment-autotest
+[100%] Built target assignment-autotest
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_hello.c:6:test_hello:INFO: Hello!  Your unity setup is working!
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_hello.c:4:test_hello:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_assignment_validate.c:9:test_assignment_validate:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+Read camwood7 from conf/username.txt
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/../student-test/assignment1/Test_validate_username.c:15:test_validate_my_username:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+Executing assignment test script
+~/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1 ~/Desktop/assignment-1-CamWood7
+~/Desktop/assignment-1-CamWood7/finder-app ~/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment1 ~/Desktop/assignment-1-CamWood7
+Error: Invalid number of arguments
+Error: Invalid number of arguments
+Using default value AELD_IS_FUN for string to write
+Using default value 10 for number of files to write
+Writing 10 files containing string AELD_IS_FUN to /tmp/aeld-data
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+The number of files are 10 and the number of matching lines are 10
+success
+Writing 10 files containing string AELD_IS_FUN to /tmp/aeld-data/vwxHx9sGEe18QcYUJizevDvVMSzkRflu
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+Content was successfully written
+The number of files are 10 and the number of matching lines are 10
+success
+Test of assignment assignment1 complete with success

@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/src/unity.c
+unity.h
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/src/unity.h
+stddef.h
+-
+avr/pgmspace.h
+-
+
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/src/unity.h
+unity_internals.h
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/src/unity_internals.h
+
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/src/unity_internals.h
+unity_config.h
+/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/src/unity_config.h
+setjmp.h
+-
+math.h
+-
+stddef.h
+-
+stdarg.h
+-
+stdint.h
+-
+limits.h
+-
+stdio.h
+-
+stdio.h
+-
+time.h
+-
+time.h
+-
+
