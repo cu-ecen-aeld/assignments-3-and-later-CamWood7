@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/cameron/Desktop/assignment-1-CamWood7
+CMAKE_SOURCE_DIR = /home/cameron/Desktop/newAss1/assignment-1-CamWood7
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/cameron/Desktop/assignment-1-CamWood7/build
+CMAKE_BINARY_DIR = /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,14 +126,14 @@ install/local/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cameron/Desktop/assignment-1-CamWood7/build/CMakeFiles /home/cameron/Desktop/assignment-1-CamWood7/build/assignment-autotest/CMakeFiles/progress.marks
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f CMakeFiles/Makefile2 assignment-autotest/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/cameron/Desktop/assignment-1-CamWood7/build/CMakeFiles 0
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build/CMakeFiles /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build/assignment-autotest/CMakeFiles/progress.marks
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f CMakeFiles/Makefile2 assignment-autotest/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f CMakeFiles/Makefile2 assignment-autotest/clean
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f CMakeFiles/Makefile2 assignment-autotest/clean
 .PHONY : clean
 
 # The main clean target
@@ -143,22 +143,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f CMakeFiles/Makefile2 assignment-autotest/preinstall
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f CMakeFiles/Makefile2 assignment-autotest/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f CMakeFiles/Makefile2 assignment-autotest/preinstall
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f CMakeFiles/Makefile2 assignment-autotest/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 assignment-autotest/CMakeFiles/assignment-autotest.dir/rule:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f CMakeFiles/Makefile2 assignment-autotest/CMakeFiles/assignment-autotest.dir/rule
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f CMakeFiles/Makefile2 assignment-autotest/CMakeFiles/assignment-autotest.dir/rule
 .PHONY : assignment-autotest/CMakeFiles/assignment-autotest.dir/rule
 
 # Convenience name for target.
@@ -168,7 +168,7 @@ assignment-autotest: assignment-autotest/CMakeFiles/assignment-autotest.dir/rule
 
 # fast build rule for target.
 assignment-autotest/fast:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/build
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/build
 .PHONY : assignment-autotest/fast
 
 __/examples/autotest-validate/autotest-validate.o: __/examples/autotest-validate/autotest-validate.c.o
@@ -177,7 +177,7 @@ __/examples/autotest-validate/autotest-validate.o: __/examples/autotest-validate
 
 # target to build an object file
 __/examples/autotest-validate/autotest-validate.c.o:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/examples/autotest-validate/autotest-validate.c.o
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/examples/autotest-validate/autotest-validate.c.o
 .PHONY : __/examples/autotest-validate/autotest-validate.c.o
 
 __/examples/autotest-validate/autotest-validate.i: __/examples/autotest-validate/autotest-validate.c.i
@@ -186,7 +186,7 @@ __/examples/autotest-validate/autotest-validate.i: __/examples/autotest-validate
 
 # target to preprocess a source file
 __/examples/autotest-validate/autotest-validate.c.i:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/examples/autotest-validate/autotest-validate.c.i
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/examples/autotest-validate/autotest-validate.c.i
 .PHONY : __/examples/autotest-validate/autotest-validate.c.i
 
 __/examples/autotest-validate/autotest-validate.s: __/examples/autotest-validate/autotest-validate.c.s
@@ -195,7 +195,7 @@ __/examples/autotest-validate/autotest-validate.s: __/examples/autotest-validate
 
 # target to generate assembly for a file
 __/examples/autotest-validate/autotest-validate.c.s:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/examples/autotest-validate/autotest-validate.c.s
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/examples/autotest-validate/autotest-validate.c.s
 .PHONY : __/examples/autotest-validate/autotest-validate.c.s
 
 __/student-test/assignment1/Test_validate_username.o: __/student-test/assignment1/Test_validate_username.c.o
@@ -204,7 +204,7 @@ __/student-test/assignment1/Test_validate_username.o: __/student-test/assignment
 
 # target to build an object file
 __/student-test/assignment1/Test_validate_username.c.o:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username.c.o
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username.c.o
 .PHONY : __/student-test/assignment1/Test_validate_username.c.o
 
 __/student-test/assignment1/Test_validate_username.i: __/student-test/assignment1/Test_validate_username.c.i
@@ -213,7 +213,7 @@ __/student-test/assignment1/Test_validate_username.i: __/student-test/assignment
 
 # target to preprocess a source file
 __/student-test/assignment1/Test_validate_username.c.i:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username.c.i
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username.c.i
 .PHONY : __/student-test/assignment1/Test_validate_username.c.i
 
 __/student-test/assignment1/Test_validate_username.s: __/student-test/assignment1/Test_validate_username.c.s
@@ -222,7 +222,7 @@ __/student-test/assignment1/Test_validate_username.s: __/student-test/assignment
 
 # target to generate assembly for a file
 __/student-test/assignment1/Test_validate_username.c.s:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username.c.s
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username.c.s
 .PHONY : __/student-test/assignment1/Test_validate_username.c.s
 
 __/student-test/assignment1/Test_validate_username_Runner.o: __/student-test/assignment1/Test_validate_username_Runner.c.o
@@ -231,7 +231,7 @@ __/student-test/assignment1/Test_validate_username_Runner.o: __/student-test/ass
 
 # target to build an object file
 __/student-test/assignment1/Test_validate_username_Runner.c.o:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username_Runner.c.o
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username_Runner.c.o
 .PHONY : __/student-test/assignment1/Test_validate_username_Runner.c.o
 
 __/student-test/assignment1/Test_validate_username_Runner.i: __/student-test/assignment1/Test_validate_username_Runner.c.i
@@ -240,7 +240,7 @@ __/student-test/assignment1/Test_validate_username_Runner.i: __/student-test/ass
 
 # target to preprocess a source file
 __/student-test/assignment1/Test_validate_username_Runner.c.i:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username_Runner.c.i
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username_Runner.c.i
 .PHONY : __/student-test/assignment1/Test_validate_username_Runner.c.i
 
 __/student-test/assignment1/Test_validate_username_Runner.s: __/student-test/assignment1/Test_validate_username_Runner.c.s
@@ -249,7 +249,7 @@ __/student-test/assignment1/Test_validate_username_Runner.s: __/student-test/ass
 
 # target to generate assembly for a file
 __/student-test/assignment1/Test_validate_username_Runner.c.s:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username_Runner.c.s
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/__/student-test/assignment1/Test_validate_username_Runner.c.s
 .PHONY : __/student-test/assignment1/Test_validate_username_Runner.c.s
 
 test/assignment1/Test_assignment_validate.o: test/assignment1/Test_assignment_validate.c.o
@@ -258,7 +258,7 @@ test/assignment1/Test_assignment_validate.o: test/assignment1/Test_assignment_va
 
 # target to build an object file
 test/assignment1/Test_assignment_validate.c.o:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate.c.o
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate.c.o
 .PHONY : test/assignment1/Test_assignment_validate.c.o
 
 test/assignment1/Test_assignment_validate.i: test/assignment1/Test_assignment_validate.c.i
@@ -267,7 +267,7 @@ test/assignment1/Test_assignment_validate.i: test/assignment1/Test_assignment_va
 
 # target to preprocess a source file
 test/assignment1/Test_assignment_validate.c.i:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate.c.i
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate.c.i
 .PHONY : test/assignment1/Test_assignment_validate.c.i
 
 test/assignment1/Test_assignment_validate.s: test/assignment1/Test_assignment_validate.c.s
@@ -276,7 +276,7 @@ test/assignment1/Test_assignment_validate.s: test/assignment1/Test_assignment_va
 
 # target to generate assembly for a file
 test/assignment1/Test_assignment_validate.c.s:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate.c.s
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate.c.s
 .PHONY : test/assignment1/Test_assignment_validate.c.s
 
 test/assignment1/Test_assignment_validate_Runner.o: test/assignment1/Test_assignment_validate_Runner.c.o
@@ -285,7 +285,7 @@ test/assignment1/Test_assignment_validate_Runner.o: test/assignment1/Test_assign
 
 # target to build an object file
 test/assignment1/Test_assignment_validate_Runner.c.o:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate_Runner.c.o
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate_Runner.c.o
 .PHONY : test/assignment1/Test_assignment_validate_Runner.c.o
 
 test/assignment1/Test_assignment_validate_Runner.i: test/assignment1/Test_assignment_validate_Runner.c.i
@@ -294,7 +294,7 @@ test/assignment1/Test_assignment_validate_Runner.i: test/assignment1/Test_assign
 
 # target to preprocess a source file
 test/assignment1/Test_assignment_validate_Runner.c.i:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate_Runner.c.i
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate_Runner.c.i
 .PHONY : test/assignment1/Test_assignment_validate_Runner.c.i
 
 test/assignment1/Test_assignment_validate_Runner.s: test/assignment1/Test_assignment_validate_Runner.c.s
@@ -303,7 +303,7 @@ test/assignment1/Test_assignment_validate_Runner.s: test/assignment1/Test_assign
 
 # target to generate assembly for a file
 test/assignment1/Test_assignment_validate_Runner.c.s:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate_Runner.c.s
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_assignment_validate_Runner.c.s
 .PHONY : test/assignment1/Test_assignment_validate_Runner.c.s
 
 test/assignment1/Test_hello.o: test/assignment1/Test_hello.c.o
@@ -312,7 +312,7 @@ test/assignment1/Test_hello.o: test/assignment1/Test_hello.c.o
 
 # target to build an object file
 test/assignment1/Test_hello.c.o:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello.c.o
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello.c.o
 .PHONY : test/assignment1/Test_hello.c.o
 
 test/assignment1/Test_hello.i: test/assignment1/Test_hello.c.i
@@ -321,7 +321,7 @@ test/assignment1/Test_hello.i: test/assignment1/Test_hello.c.i
 
 # target to preprocess a source file
 test/assignment1/Test_hello.c.i:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello.c.i
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello.c.i
 .PHONY : test/assignment1/Test_hello.c.i
 
 test/assignment1/Test_hello.s: test/assignment1/Test_hello.c.s
@@ -330,7 +330,7 @@ test/assignment1/Test_hello.s: test/assignment1/Test_hello.c.s
 
 # target to generate assembly for a file
 test/assignment1/Test_hello.c.s:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello.c.s
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello.c.s
 .PHONY : test/assignment1/Test_hello.c.s
 
 test/assignment1/Test_hello_Runner.o: test/assignment1/Test_hello_Runner.c.o
@@ -339,7 +339,7 @@ test/assignment1/Test_hello_Runner.o: test/assignment1/Test_hello_Runner.c.o
 
 # target to build an object file
 test/assignment1/Test_hello_Runner.c.o:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello_Runner.c.o
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello_Runner.c.o
 .PHONY : test/assignment1/Test_hello_Runner.c.o
 
 test/assignment1/Test_hello_Runner.i: test/assignment1/Test_hello_Runner.c.i
@@ -348,7 +348,7 @@ test/assignment1/Test_hello_Runner.i: test/assignment1/Test_hello_Runner.c.i
 
 # target to preprocess a source file
 test/assignment1/Test_hello_Runner.c.i:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello_Runner.c.i
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello_Runner.c.i
 .PHONY : test/assignment1/Test_hello_Runner.c.i
 
 test/assignment1/Test_hello_Runner.s: test/assignment1/Test_hello_Runner.c.s
@@ -357,7 +357,7 @@ test/assignment1/Test_hello_Runner.s: test/assignment1/Test_hello_Runner.c.s
 
 # target to generate assembly for a file
 test/assignment1/Test_hello_Runner.c.s:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello_Runner.c.s
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/assignment1/Test_hello_Runner.c.s
 .PHONY : test/assignment1/Test_hello_Runner.c.s
 
 test/unity_runner.o: test/unity_runner.c.o
@@ -366,7 +366,7 @@ test/unity_runner.o: test/unity_runner.c.o
 
 # target to build an object file
 test/unity_runner.c.o:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/unity_runner.c.o
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/unity_runner.c.o
 .PHONY : test/unity_runner.c.o
 
 test/unity_runner.i: test/unity_runner.c.i
@@ -375,7 +375,7 @@ test/unity_runner.i: test/unity_runner.c.i
 
 # target to preprocess a source file
 test/unity_runner.c.i:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/unity_runner.c.i
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/unity_runner.c.i
 .PHONY : test/unity_runner.c.i
 
 test/unity_runner.s: test/unity_runner.c.s
@@ -384,7 +384,7 @@ test/unity_runner.s: test/unity_runner.c.s
 
 # target to generate assembly for a file
 test/unity_runner.c.s:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/unity_runner.c.s
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(MAKE) -f assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make assignment-autotest/CMakeFiles/assignment-autotest.dir/test/unity_runner.c.s
 .PHONY : test/unity_runner.c.s
 
 # Help Target
@@ -435,6 +435,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/cameron/Desktop/assignment-1-CamWood7/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

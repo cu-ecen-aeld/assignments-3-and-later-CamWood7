@@ -6,5 +6,5 @@ C_FLAGS =  -Wall -Werror -g
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/Unity/src -I/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/. -I/home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest/.. 
+C_INCLUDES = -I/home/cameron/Desktop/newAss1/assignment-1-CamWood7/assignment-autotest/Unity/src -I/home/cameron/Desktop/newAss1/assignment-1-CamWood7/assignment-autotest/. -I/home/cameron/Desktop/newAss1/assignment-1-CamWood7/assignment-autotest/.. 
 

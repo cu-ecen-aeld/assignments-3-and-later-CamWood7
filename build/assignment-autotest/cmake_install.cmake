@@ -1,4 +1,4 @@
-# Install script for directory: /home/cameron/Desktop/assignment-1-CamWood7/assignment-autotest
+# Install script for directory: /home/cameron/Desktop/newAss1/assignment-1-CamWood7/assignment-autotest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/cameron/Desktop/assignment-1-CamWood7/build/assignment-autotest/Unity/cmake_install.cmake")
+  include("/home/cameron/Desktop/newAss1/assignment-1-CamWood7/build/assignment-autotest/Unity/cmake_install.cmake")
 
 endif()
 
