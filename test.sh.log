@@ -234,3 +234,92 @@ Content was successfully written
 The number of files are 10 and the number of matching lines are 10
 success
 Test of assignment assignment1 complete with success
+Running test with user cameron
+CMake Error: The current CMakeCache.txt directory /home/cameron/Desktop/assignment-1-CamWood7/build/CMakeCache.txt is different than the directory /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
+CMake Error: The source "/home/cameron/Desktop/assignment-1-CamWood7/CMakeLists.txt" does not match the source "/home/cameron/Desktop/newAss1/assignment-1-CamWood7/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.
+/bin/sh: 1: cd: can't cd to /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build/assignment-autotest
+make[2]: *** [assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make:213: assignment-autotest/CMakeFiles/assignment-autotest.dir/clean] Error 2
+make[1]: *** [CMakeFiles/Makefile2:150: assignment-autotest/CMakeFiles/assignment-autotest.dir/clean] Error 2
+make: *** [Makefile:136: clean] Error 2
+CMake Error: The source directory "/home/cameron/Desktop/newAss1/assignment-1-CamWood7" does not exist.
+Specify --help for usage, or press the help button on the CMake GUI.
+make: *** [Makefile:210: cmake_check_build_system] Error 1
+/home/cameron/Desktop/newAss1/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_hello.c:6:test_hello:INFO: Hello!  Your unity setup is working!
+/home/cameron/Desktop/newAss1/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_hello.c:4:test_hello:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+/home/cameron/Desktop/newAss1/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_assignment_validate.c:9:test_assignment_validate:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+Read camwood7 from conf/username.txt
+/home/cameron/Desktop/newAss1/assignment-1-CamWood7/assignment-autotest/../student-test/assignment1/Test_validate_username.c:15:test_validate_my_username:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+Executing assignment test script
+~/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment2 ~/Desktop/assignment-1-CamWood7
+~/Desktop/assignment-1-CamWood7/finder-app ~/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment2 ~/Desktop/assignment-1-CamWood7
+rm -f writer writer.o
+gcc -Wall   -c -o writer.o writer.c
+gcc -Wall writer.o -o writer
+Not enough inputsNot enough inputsUsing default value AELD_IS_FUN for string to write
+Using default value 10 for number of files to write
+Writing 10 files containing string AELD_IS_FUN to /tmp/aeld-data
+/tmp/aeld-data created
+Removing the old writer utility and compiling as a native application
+rm -f writer writer.o
+gcc -Wall   -c -o writer.o writer.c
+gcc -Wall writer.o -o writer
+failed: expected  The number of files are 10 and the number of matching lines are 10 in The number of files are 0 and the number of matching lines are 0 but instead found
+[0;31mValidation Error:finder-test.sh execution failed with return code 1[0m
+Validation failed with error list :finder-test.sh execution failed with return code 1
+Test of assignment assignment2 failed with rc=1
+Running test with user cameron
+CMake Error: The current CMakeCache.txt directory /home/cameron/Desktop/assignment-1-CamWood7/build/CMakeCache.txt is different than the directory /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
+CMake Error: The source "/home/cameron/Desktop/assignment-1-CamWood7/CMakeLists.txt" does not match the source "/home/cameron/Desktop/newAss1/assignment-1-CamWood7/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.
+/bin/sh: 1: cd: can't cd to /home/cameron/Desktop/newAss1/assignment-1-CamWood7/build/assignment-autotest
+make[2]: *** [assignment-autotest/CMakeFiles/assignment-autotest.dir/build.make:213: assignment-autotest/CMakeFiles/assignment-autotest.dir/clean] Error 2
+make[1]: *** [CMakeFiles/Makefile2:150: assignment-autotest/CMakeFiles/assignment-autotest.dir/clean] Error 2
+make: *** [Makefile:136: clean] Error 2
+CMake Error: The source directory "/home/cameron/Desktop/newAss1/assignment-1-CamWood7" does not exist.
+Specify --help for usage, or press the help button on the CMake GUI.
+make: *** [Makefile:210: cmake_check_build_system] Error 1
+/home/cameron/Desktop/newAss1/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_hello.c:6:test_hello:INFO: Hello!  Your unity setup is working!
+/home/cameron/Desktop/newAss1/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_hello.c:4:test_hello:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+/home/cameron/Desktop/newAss1/assignment-1-CamWood7/assignment-autotest/test/assignment1/Test_assignment_validate.c:9:test_assignment_validate:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+Read camwood7 from conf/username.txt
+/home/cameron/Desktop/newAss1/assignment-1-CamWood7/assignment-autotest/../student-test/assignment1/Test_validate_username.c:15:test_validate_my_username:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored 
+OK
+Executing assignment test script
+~/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment2 ~/Desktop/assignment-1-CamWood7
+~/Desktop/assignment-1-CamWood7/finder-app ~/Desktop/assignment-1-CamWood7/assignment-autotest/test/assignment2 ~/Desktop/assignment-1-CamWood7
+rm -f writer writer.o
+gcc -Wall   -c -o writer.o writer.c
+gcc -Wall writer.o -o writer
+Not enough inputsNot enough inputsUsing default value AELD_IS_FUN for string to write
+Using default value 10 for number of files to write
+Writing 10 files containing string AELD_IS_FUN to /tmp/aeld-data
+/tmp/aeld-data created
+Removing the old writer utility and compiling as a native application
+rm -f writer writer.o
+gcc -Wall   -c -o writer.o writer.c
+gcc -Wall writer.o -o writer
+The number of files are 10 and the number of matching lines are 10
+success
+Test of assignment assignment2 complete with success
