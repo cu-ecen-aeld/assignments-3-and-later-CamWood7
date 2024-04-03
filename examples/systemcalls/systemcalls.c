@@ -1,4 +1,10 @@
 #include "systemcalls.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <fcnt1.h>
 
 /**
  * @param cmd the command to execute with system()
@@ -16,6 +22,11 @@ bool do_system(const char *cmd)
  *   and return a boolean true if the system() call completed with success
  *   or false() if it returned a failure
 */
+
+    int val = system(cmd);
+    if (val != 0)
+	    return false;
+
 
     return true;
 }
@@ -45,9 +56,6 @@ bool do_exec(int count, ...)
         command[i] = va_arg(args, char *);
     }
     command[count] = NULL;
-    // this line is to avoid a compile warning before your implementation is complete
-    // and may be removed
-    command[count] = command[count];
 
 /*
  * TODO:
@@ -58,10 +66,32 @@ bool do_exec(int count, ...)
  *   as second argument to the execv() command.
  *
 */
+    // Initialize variables
+    pid_t pid;
+    int stat;
 
+    pid = fork();
+    if (pid == -1) {
+	    return false;
+    }
+    else if (pid == 0) {
+	    execv(command[0], command);
+	    perror("Failed at execv");
+	    exit(1);
+    }
+
+    waitpid(pid, &status, 0);
     va_end(args);
 
-    return true;
+    if (status == 0) {
+	    printf("pid of %d\n", status);
+	    return true;
+    }
+    else
+    {
+	    printf("pid of %d\n", status);
+	    return false;
+    }
 }
 
 /**
@@ -80,10 +110,6 @@ bool do_exec_redirect(const char *outputfile, int count, ...)
         command[i] = va_arg(args, char *);
     }
     command[count] = NULL;
-    // this line is to avoid a compile warning before your implementation is complete
-    // and may be removed
-    command[count] = command[count];
-
 
 /*
  * TODO
@@ -93,7 +119,44 @@ bool do_exec_redirect(const char *outputfile, int count, ...)
  *
 */
 
+    // Initialize variables
+    pid_t pid;
+    int stat;
+    int fred;
+    int dup;
+
+    pid = fork();
+    if (pid == -1) {
+            return false;
+    }
+    else if (pid == 0) {
+            fred = open(outputfile, O_WRONLY|O_CREAT|O_TRUNC, 0644);
+	    if (fred == -1) {
+                perror("Could not open file");
+	        return false;
+	    }
+
+	    dup = dup2(fred, 1);
+	    if (dup < 0) {
+	        perror("Failed at Dup");
+		return false;
+	    }
+
+	    status = execv(command[0], command);
+	    perror("Failed at execv");
+	    exit(1);
+    }
+
+    waitpid(pid, &status, 0);
     va_end(args);
 
-    return true;
+    if (status == 0) {
+            printf("pid of %d\n", status);
+            return true;
+    }
+    else
+    {
+            printf("pid of %d\n", status);
+            return false;
+    }
 }
