@@ -166,6 +166,12 @@ int main(int argc, char **argv) {
 	
 	}
 	setsid();
+	
+	chdir("/");
+    	if ((freopen("/dev/null", "r", stdin) == NULL) || (freopen("/dev/null", "w", stdout) == NULL) || (freopen("/dev/null", "r", stderr) == NULL)) {
+            syslog(LOG_ERR, "Error in redirecting i/o!: %s", strerror(errno));
+      	    goto errorExit;
+    	}
     }
 
     int file = open("/var/tmp/aesdsocketdata", O_CREAT | O_TRUNC | O_RDWR, 0644);
