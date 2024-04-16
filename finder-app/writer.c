@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[]) {
 	
-	openlog("assignment2Logs", LOG_PID, LOG_USER);
+	openlog(NULL, LOG_PID, LOG_USER);
 
 	// End call if not enough inputs
 	if (argc != 3) {
