@@ -1,18 +1,13 @@
-CC = gcc
-CROSS_COMPILE ?=
-CFLAGS = -Wall
+all: writer
 
-SRC = writer.c
-OBJ = $(SRC:.c=.o)
-OUT = writer
-
-ifdef CROSS_COMPILE
-	CC = $(CROSS_COMPILE)gcc
-endif
-
-$(OUT): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(OUT)
-
-.PHONY: clean
 clean:
-	rm -f $(OUT) $(OBJ)
+	rm -rf *.o
+	rm -f writer
+
+writer: writer.o
+	$(CC) $(LDFLAGS) -o writer writer.o
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c -o $@ $<
+
+.PHONY: clean all
