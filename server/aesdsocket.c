@@ -49,7 +49,7 @@ static bool proc_packet(int sk, int fd)
     char *c = NULL;
     bool run_complete = false;
     ssize_t num_bytes = 0;
-    off_t init_offset = lseek(fd, 0, SEEK_END);
+    //off_t init_offset = lseek(fd, 0, SEEK_END);
 
     while (!sig_recieved && !run_complete)
     {
@@ -72,7 +72,7 @@ static bool proc_packet(int sk, int fd)
         if (write(fd, buffer, num_bytes) == -1)
         {
             syslog(LOG_ERR, "Could not write: %s", strerror(errno));
-            ftruncate(fd, init_offset);
+            //ftruncate(fd, init_offset);
             return false;
         }
     }
@@ -314,7 +314,7 @@ int main(int argc, char **argv)
             _exit(0);
         }
         setsid();
-        chdir("/");
+        //chdir("/");
 
         if ((freopen("/dev/null", "r", stdin) == NULL) ||
             (freopen("/dev/null", "w", stdout) == NULL) ||
