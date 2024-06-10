@@ -5,4 +5,4 @@ clean:
 	rm -rf aesdsocket *.o
 
 aesdsocket: aesdsocket.c
-	$(CC) -Wall -Werror -g aesdsocket.c -o aesdsocket -lpthread -lrt
+	$(CC) -Wall -Werror -g aesdsocket.c -o aesdsocket -Bstatic -pthread -lpthread -lrt
