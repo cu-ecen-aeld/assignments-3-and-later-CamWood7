@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Werror -g
+CFLAGS = -Wall -Werror -g -pthread
 LDFLAGS += -Wl,--hash-style=gnu -pthread -lrt
 
 all: aesdsocket
