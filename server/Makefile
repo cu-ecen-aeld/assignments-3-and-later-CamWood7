@@ -1,12 +1,18 @@
-CC = gcc
-CFLAGS = -Wall -Werror -g -pthread
-LDFLAGS += -Wl,--hash-style=gnu -pthread -lrt
+.PHONY: all clean
+CC ?= gcc
+CROSS_COMPILE ?= 
+CFLAGS ?= -Wall -Werror
+SRCS = aesdsocket.c
+TARGET ?= aesdsocket
+LDFLAGS ?= -pthread -lrt
 
-all: aesdsocket
+$(TARGET): $(TARGET).o
+	$(CROSS_COMPILE)$(CC) $(CFLAGS) $(LDFLAGS) -I/ $(TARGET).o -o $(TARGET)
+$(TARGET).o:$(TARGET).c
+	$(CROSS_COMPILE)$(CC) $(CFLAGS) $(LDFLAGS) -C $(TARGET).C -O $(TARGET).O
 
-aesdsocket: aesdsocket.o
-	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+all: $(TARGET)
 
 .PHONY: clean
 clean:
-	rm -rf aesdsocket *.o
+	rm -rf *.o $(TARGET)
