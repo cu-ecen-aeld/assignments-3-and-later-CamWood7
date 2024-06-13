@@ -8,8 +8,8 @@ LDFLAGS ?= -pthread -lrt
 
 $(TARGET): $(TARGET).o
 	$(CROSS_COMPILE)$(CC) $(CFLAGS) $(LDFLAGS) -I/ $(TARGET).o -o $(TARGET)
-$(TARGET).o:$(TARGET).c
-	$(CROSS_COMPILE)$(CC) $(CFLAGS) $(LDFLAGS) -C $(TARGET).C -O $(TARGET).O
+##$(TARGET).o:$(TARGET).c
+##	$(CROSS_COMPILE)$(CC) $(CFLAGS) $(LDFLAGS) -C $(TARGET).C -O $(TARGET).O
 
 all: $(TARGET)
 
