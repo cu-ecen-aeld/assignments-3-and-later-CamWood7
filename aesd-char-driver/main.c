@@ -17,6 +17,8 @@
 #include <linux/types.h>
 #include <linux/cdev.h>
 #include <linux/fs.h> // file_operations
+#include <linux/slab.h>
+
 #include "aesdchar.h"
 int aesd_major =   0; // use dynamic major
 int aesd_minor =   0;
@@ -133,7 +135,7 @@ ssize_t aesd_write(struct file *filp, const char __user *buf, size_t count,
     {
         char *p = memchr(ad->working_entry.buffptr, '\n', ad->working_entry.size);
         struct aesd_buffer_entry entry;
-	size_t = sz;
+	size_t sz;
 
 	if (!p)
 	{
@@ -239,7 +241,7 @@ void aesd_cleanup_module(void)
         struct aesd_buffer_entry *entry;
         AESD_CIRCULAR_BUFFER_FOREACH(entry, &aesd_device.cbuf, idx)
         {
-	    kfree(entry->buffptr);
+	        kfree(entry->buffptr);
         }
 
         kfree(aesd_device.working_entry.buffptr);
