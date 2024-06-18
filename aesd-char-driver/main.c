@@ -20,6 +20,8 @@
 #include <linux/slab.h>
 
 #include "aesdchar.h"
+#include "aesd-circular-buffer.h"
+
 int aesd_major =   0; // use dynamic major
 int aesd_minor =   0;
 
@@ -53,14 +55,13 @@ ssize_t aesd_read(struct file *filp, char __user *buf, size_t count,
                 loff_t *f_pos)
 {
     ssize_t retval = 0;
+    struct aesd_dev *ad = filp->private_data;
+    struct aesd_buffer_entry *entry;
+    size_t off;
     PDEBUG("read %zu bytes with offset %lld",count,*f_pos);
     /**
      * TODO: handle read
      */
-
-    struct aesd_dev *ad = filp->private_data;
-    struct aesd_buffer_entry *entry;
-    size_t off;
 
     if (mutex_lock_interruptible(&ad->mutex))
     {
@@ -94,13 +95,12 @@ ssize_t aesd_write(struct file *filp, const char __user *buf, size_t count,
                 loff_t *f_pos)
 {
     ssize_t retval = -ENOMEM;
+    struct aesd_dev *ad = filp->private_data;
+    char *new_buf;
     PDEBUG("write %zu bytes with offset %lld",count,*f_pos);
     /**
      * TODO: handle write
      */
-
-    struct aesd_dev *ad = filp->private_data;
-    char *new_buf;
 
     if (mutex_lock_interruptible(&ad->mutex))
     {

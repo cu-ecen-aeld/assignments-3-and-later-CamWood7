@@ -51,6 +51,7 @@ struct aesd_circular_buffer
     bool full;
 };
 
+
 extern struct aesd_buffer_entry *aesd_circular_buffer_find_entry_offset_for_fpos(struct aesd_circular_buffer *buffer,
             size_t char_offset, size_t *entry_offset_byte_rtn );
 
