@@ -62,7 +62,7 @@ ssize_t aesd_read(struct file *filp, char __user *buf, size_t count,
 
     if (mutex_lock_interruptible(&ad->mutex))
     {
-        return -ERESARTSYS;
+        return -ERESTARTSYS;
     }
 
     entry = aesd_circular_buffer_find_entry_offset_for_fpos(&ad->cbuf, *f_pos, &off);
