@@ -2,10 +2,10 @@
 
 case "$1" in
 	start)
-	start-stop-daemon -S -n aesdsocket -a /usr/bin/aesdsocket -- -d
+	/usr/bin/aesdsocket -d
 	;;
 	stop)
-	start-stop-daemon -K -n aesdsocket
+	killall aesdsocket
 	;;
 	*)
 	exit 1
