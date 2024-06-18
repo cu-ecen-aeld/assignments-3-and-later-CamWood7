@@ -18,6 +18,10 @@
 #include <stdatomic.h>
 #include "queue.h"
 
+#ifndef USE_AESD_CHAR_DEVICE
+#define USE_AESD_CHAR_DEVICE 1
+#endif
+
 // Define Fixed Values
 static bool sig_recieved = false;
 static int fd = -1;
@@ -49,7 +53,20 @@ static bool proc_packet(int sk, int fd)
     char *c = NULL;
     bool run_complete = false;
     ssize_t num_bytes = 0;
-    //off_t init_offset = lseek(fd, 0, SEEK_END);
+    bool retval = false;
+
+#if !USE_AESD_CHAR_DEVICE
+    off_t init_offset = lseek(fd, 0, SEEK_END);
+#endif
+
+#if USE_AESD_CHAR_DEVICE
+  fd = open("/dev/aesdchar", O_CREAT | O_TRUNC | O_RDWR, 0644);
+  if (fd == -1) 
+  {
+    syslog(LOG_ERR, "Could not open file %s", strerror(errno));
+    return false;
+  }
+#endif
 
     while (!sig_recieved && !run_complete)
     {
@@ -57,9 +74,9 @@ static bool proc_packet(int sk, int fd)
         if (num_bytes == -1)
         {
             syslog(LOG_ERR, "Num Bytes = -1: %s", strerror(errno));
-            return false;
+            goto exit;
         } else if (num_bytes == 0) {
-            return false;
+            goto exit;
         }
 
         c = memchr(buffer, '\n', num_bytes);
@@ -72,17 +89,25 @@ static bool proc_packet(int sk, int fd)
         if (write(fd, buffer, num_bytes) == -1)
         {
             syslog(LOG_ERR, "Could not write: %s", strerror(errno));
-            //ftruncate(fd, init_offset);
-            return false;
+            #if !USE_AESD_CHAR_DEVICE
+            ftruncate(fd, init_offset);
+            #endif
+            goto exit;
         }
     }
 
     if (sig_recieved)
     {
-        return false;
+        goto exit;
     }
 
     return true;
+
+exit:
+    #if USE_AESD_CHAR_DEVICE
+    close(fd);
+    #endif
+    return retval;
 }
 
 // Provide a response rationale
@@ -92,11 +117,20 @@ static void provide_resp(int sk, int fd)
     char buffer[4096];
     ssize_t num_bytes = 0;
 
+#if !USE_AESD_CHAR_DEVICE
     if ((lseek(fd, 0, SEEK_SET)) == -1)
     {
         syslog(LOG_ERR, "Could not find end: %s", strerror(errno));
         return;
     }
+#else
+    fd = open("/dev/aesdchar", O_CREAT | O_TRUNC | O_RDWR, 0644);
+    if (fd == -1) 
+    {
+        syslog(LOG_ERR, "Error opening file!: %s", strerror(errno));
+        return;
+    }
+#endif
 
     while (!sig_recieved)
     {
@@ -115,6 +149,9 @@ static void provide_resp(int sk, int fd)
             return;
         }
     }
+    #if USE_AESD_CHAR_DEVICE
+    close(fd);
+    #endif
 }
 
 // Generate the Thread
@@ -265,6 +302,12 @@ int main(int argc, char **argv)
     pthread_t timer_thread;
     pthread_t sig_thread;
     struct sigaction sig_action;
+    #if USE_AESD_CHAR_DEVICE
+    bool enable_timer = false;
+    #else
+    bool enable_timer = true;
+    #endif
+
 
     main_thread = pthread_self();
     memset(&hints, 0, sizeof(hints));
@@ -324,12 +367,13 @@ int main(int argc, char **argv)
             goto exit;
         }
     }
-
+#if !USE_AESD_CHAR_DEVICE
     fd = open("/var/tmp/aesdsocketdata", O_CREAT | O_TRUNC | O_RDWR, 0644);
     if (fd == -1) {
         syslog(LOG_ERR, "Could not open file: %s", strerror(errno));
         goto exit;
     }
+#endif
 
     if (listen(sk, 10) == -1) {
         syslog(LOG_ERR, "Could not listen to socket: %s", strerror(errno));
@@ -355,11 +399,13 @@ int main(int argc, char **argv)
         syslog(LOG_ERR, "Could not create thread: %s", strerror(rec));
         goto exit;
     }
-
-    if ((rec = pthread_create(&timer_thread, NULL, thread_timer, NULL)) != 0)
+    if (enable_timer)
     {
-        syslog(LOG_ERR, "Could not create thread: %s", strerror(rec));
-        goto exit;
+        if ((rec = pthread_create(&timer_thread, NULL, thread_timer, NULL)) != 0)
+        {
+            syslog(LOG_ERR, "Could not create thread: %s", strerror(rec));
+            goto exit;
+        }
     }
 
     while(!sig_recieved)
@@ -399,7 +445,10 @@ int main(int argc, char **argv)
         syslog(LOG_ERR, "Exiting");
     }
 
-    pthread_kill(timer_thread, SIGUSR1);
+    if (enable_timer)
+    {
+        pthread_kill(timer_thread, SIGUSR1);
+    }
 
     SLIST_FOREACH_SAFE(td, &list, next, td2)
     {
@@ -409,11 +458,13 @@ int main(int argc, char **argv)
         }
         free(td);
     }
-
-    if ((rec = pthread_join(sig_thread, NULL)) != 0)
+    if (enable_timer)
     {
-        syslog(LOG_ERR, "Could not create thread: %s", strerror(rec));
-        goto exit;
+        if ((rec = pthread_join(sig_thread, NULL)) != 0)
+        {
+            syslog(LOG_ERR, "Could not create thread: %s", strerror(rec));
+            goto exit;
+        }
     }
 
     if ((rec = pthread_join(timer_thread, NULL)) != 0)
@@ -444,8 +495,9 @@ exit:
     {
         close(fd);
     }
-
+#if !USE_AESD_CHAR_DEVICE
     unlink("/var/tmp/aesdsocketdata");
+#endif
     closelog();
     return return_val;
 
