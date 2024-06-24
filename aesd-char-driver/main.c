@@ -203,7 +203,7 @@ long aesd_ioctl(struct file *filp, unsigned int cmd, unsigned long arg)
 
     PDEBUG("Running ioctl command=%u", cmd);
 
-    if (cmd != AESDCHR_IOCSEEKTO)
+    if (cmd != AESDCHAR_IOCSEEKTO)
     {
         return -ENOTTY;
     }
