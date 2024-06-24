@@ -187,7 +187,7 @@ loff_t aesd_llseek(struct file *filp, loff_t offset, int whence)
         return -ERESTARTSYS;
     }
 
-    total_size = aesd_get_total_size(&ad->cbuf);
+    total_size = (loff_t) aesd_get_total_size(&ad->cbuf);
     retval = fixed_size_llseek(filp, offset, whence, total_size);
 
     mutex_unlock(&ad->mutex);

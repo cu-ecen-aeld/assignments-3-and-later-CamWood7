@@ -136,15 +136,16 @@ static bool proc_packet(int sk, int fd, int *outfd, bool *ctrl)
             *ctrl = true;
 
         }
-        else if (write(fd, buffer, num_bytes) == -1)
-        {
-            syslog(LOG_ERR, "Could not write: %s", strerror(errno));
-            #if !USE_AESD_CHAR_DEVICE
-            ftruncate(fd, init_offset);
-            #endif
-            goto exit;
+        else {
+            if (write(fd, buffer, num_bytes) == -1)
+            {
+                syslog(LOG_ERR, "Could not write: %s", strerror(errno));
+                #if !USE_AESD_CHAR_DEVICE
+                ftruncate(fd, init_offset);
+                #endif
+                goto exit;
+            }
         }
-        
     }
 
     if (sig_recieved)
@@ -233,7 +234,7 @@ static void *gen_thread(void *arg)
     {
         syslog(LOG_ERR, "There was an error processing the packet.");
     } else {
-        provide_resp(td->sock, fd, &ctrl);
+        provide_resp(td->sock, fdret, ctrl);
     }
 
     close(td->sock);
