@@ -233,7 +233,7 @@ static void *gen_thread(void *arg)
     {
         syslog(LOG_ERR, "There was an error processing the packet.");
     } else {
-        provide_resp(td->sock, fd, &fdret, &ctrl);
+        provide_resp(td->sock, fd, &ctrl);
     }
 
     close(td->sock);
