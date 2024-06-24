@@ -175,7 +175,7 @@ long aesd_get_offset(struct aesd_circular_buffer *buffer, uint32_t write_cmd, ui
     }
 
     pos = buffer->out_offs;
-    for (idx = 0; idx < max; ++idx)
+    for (idx = 0; idx < write_cmd; ++idx)
     {
         total_size += buffer->entry[pos].size;
         pos++;
