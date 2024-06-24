@@ -17,7 +17,7 @@
 #include <pthread.h>
 #include <stdatomic.h>
 #include "queue.h"
-#include "../aesd_char_driver/aesd_ioctl.h"
+#include "aesd_ioctl.h"
 
 #define CONTROL_MSG "AESDCHAR_IOCSEEKTO:"
 #define CONTROL_MSG_SIZE (sizeof(CONTROL_MSG) - 1)
