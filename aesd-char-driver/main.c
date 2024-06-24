@@ -228,7 +228,7 @@ long aesd_ioctl(struct file *filp, unsigned int cmd, unsigned long arg)
         goto exit;
     }
 
-    filp->fpos = offset;
+    filp->f_pos = offset;
 
 exit:
     mutex_unlock(&ad->mutex);
