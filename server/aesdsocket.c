@@ -17,6 +17,10 @@
 #include <pthread.h>
 #include <stdatomic.h>
 #include "queue.h"
+#include "../aesd_char_driver/aesd_ioctl.h"
+
+#define CONTROL_MSG "AESDCHAR_IOCSEEKTO:"
+#define CONTROL_MSG_SIZE (sizeof(CONTROL_MSG) - 1)
 
 #ifndef USE_AESD_CHAR_DEVICE
 #define USE_AESD_CHAR_DEVICE 1
@@ -47,7 +51,7 @@ static void signal_handler(int a) {}
 
 // Process the Recieved Packet
 
-static bool proc_packet(int sk, int fd)
+static bool proc_packet(int sk, int fd, int *outfd, bool *ctrl)
 {
     char buffer[4096];
     char *c = NULL;
@@ -58,6 +62,8 @@ static bool proc_packet(int sk, int fd)
 #if !USE_AESD_CHAR_DEVICE
     off_t init_offset = lseek(fd, 0, SEEK_END);
 #endif
+
+*ctrl = false;
 
 #if USE_AESD_CHAR_DEVICE
   fd = open("/dev/aesdchar", O_CREAT | O_TRUNC | O_RDWR, 0644);
@@ -86,7 +92,51 @@ static bool proc_packet(int sk, int fd)
             run_complete = true;
         }
 
-        if (write(fd, buffer, num_bytes) == -1)
+        if ((run_complete && (num_bytes >= CONTROL_MSG_SIZE) &&
+            !memcmp(CONTROL_MSG, buffer, CONTROL_MSG_SIZE)))
+        {
+            struct aesd_seekto seekto;
+            char *end = NULL;
+
+            buffer[num_bytes - 1] = 0;
+
+            if ((c = strchr(buffer, ',')) == NULL)
+            {
+                syslog(LOG_ERR, "Issue with control message");
+                goto exit;
+            }
+
+            *c = 0;
+
+            seekto.write_cmd = (uint32_t) strtoul(buffer + CONTROL_MSG_SIZE, &end, 10);
+
+            if (!buffer[CONTROL_MSG_SIZE] || (*end != 0))
+            {
+                syslog(LOG_ERR, "Issue with control message");
+                goto exit;
+            }
+
+            seekto.write_cmd_offset = (uint32_t) strtoul(c + 1, &end, 10);
+
+            if (!c[1] || (*end != 0))
+            {
+                syslog(LOG_ERR, "Issue with control message");
+                goto exit;
+            }
+
+            syslog(LOG_DEBUG, "seekto=%d, offset=%d", seekto.write_cmd, seekto.write_cmd_offset);
+
+            if (ioctl(fd, AESDCHAR_IOCSEEKTO, &seekto) == -1)
+            {
+                syslog(LOG_ERR, "Issue with ioctl: %s", strerror(errno));
+                goto exit;
+            }
+
+            *outfd = fd;
+            *ctrl = true;
+
+        }
+        else if (write(fd, buffer, num_bytes) == -1)
         {
             syslog(LOG_ERR, "Could not write: %s", strerror(errno));
             #if !USE_AESD_CHAR_DEVICE
@@ -94,6 +144,7 @@ static bool proc_packet(int sk, int fd)
             #endif
             goto exit;
         }
+        
     }
 
     if (sig_recieved)
@@ -105,14 +156,17 @@ static bool proc_packet(int sk, int fd)
 
 exit:
     #if USE_AESD_CHAR_DEVICE
-    close(fd);
+    if (!*ctrl || !retval)
+    {
+        close(fd);
+    }
     #endif
     return retval;
 }
 
 // Provide a response rationale
 
-static void provide_resp(int sk, int fd)
+static void provide_resp(int sk, int fd, bool ctrl)
 {
     char buffer[4096];
     ssize_t num_bytes = 0;
@@ -124,11 +178,14 @@ static void provide_resp(int sk, int fd)
         return;
     }
 #else
-    fd = open("/dev/aesdchar", O_CREAT | O_TRUNC | O_RDWR, 0644);
-    if (fd == -1) 
+    if (!ctrl)
     {
-        syslog(LOG_ERR, "Error opening file!: %s", strerror(errno));
-        return;
+        fd = open("/dev/aesdchar", O_CREAT | O_TRUNC | O_RDWR, 0644);
+        if (fd == -1) 
+        {
+            syslog(LOG_ERR, "Error opening file!: %s", strerror(errno));
+            return;
+        }
     }
 #endif
 
@@ -160,6 +217,8 @@ static void *gen_thread(void *arg)
 {
     struct thread_data *td = arg;
     char ip_addr[40];
+    bool ctrl = false;
+    int fdret = fd;
 
     pthread_mutex_lock(&mutex);
 
@@ -170,11 +229,11 @@ static void *gen_thread(void *arg)
 
     syslog(LOG_DEBUG, "Accepted connection from %s", ip_addr);
 
-    if (!proc_packet(td->sock, fd))
+    if (!proc_packet(td->sock, fd, &fdret, &ctrl))
     {
         syslog(LOG_ERR, "There was an error processing the packet.");
     } else {
-        provide_resp(td->sock, fd);
+        provide_resp(td->sock, fd, &fdret, &ctrl);
     }
 
     close(td->sock);
